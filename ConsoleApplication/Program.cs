@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleTables;
 
 namespace ConsoleApplication
 {
@@ -83,10 +84,13 @@ namespace ConsoleApplication
         {
             Console.WriteLine("Employee List:");
 
+            ConsoleTable table = new ConsoleTable("EmployeeId", "FullName", "BirthDate");
+
             foreach(var emp in employees)
             {
-                Console.WriteLine($"EmployeeId: {emp.EmployeeId} | FullName: {emp.FullName} | BirthDate: {emp.BirthDate} ");
+                table.AddRow(emp.EmployeeId, emp.FullName, emp.BirthDate);
             }
+            Console.WriteLine(table.ToString());
         }
 
         static void UpdateEmployee()
