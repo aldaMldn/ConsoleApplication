@@ -88,7 +88,7 @@ namespace ConsoleApplication
 
             foreach(var emp in employees)
             {
-                table.AddRow(emp.EmployeeId, emp.FullName, emp.BirthDate);
+                table.AddRow(emp.EmployeeId, emp.FullName, emp.BirthDate.ToString("dd-MMM-yy"));
             }
             Console.WriteLine(table.ToString());
         }
